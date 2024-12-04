@@ -12,7 +12,12 @@ const categories = [
   { href: "/suits", name: "Bộ vest", imageUrl: "/suits.jpg" },
   { href: "/bags", name: "Túi xách", imageUrl: "/bags.jpg" },
 ];
-
+<script
+    src="https://app.preny.ai/bot-embed.js"
+    data-preny-bot-id="6750bc21ef8d04a523f8e3db"
+    async
+    defer
+  />
 const HomePage = () => {
   const { fetchFeaturedProducts, products, isLoading } = useProductStore();
   const carouselRef = useRef(null);
@@ -53,14 +58,29 @@ const HomePage = () => {
 
   return (
     <div className="relative min-h-screen bg-gray-900 text-white">
+      {/* Nút Messenger */}
+      <a
+        href="https://m.me/207110309151655"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-20 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        title="Chat với chúng tôi trên Messenger"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          className="w-6 h-6"
+        >
+          <path d="M12 2C6.486 2 2 6.225 2 11.46c0 2.93 1.527 5.53 3.956 7.246v3.187L9.59 19.7c.778.215 1.603.34 2.41.34 5.514 0 10-4.225 10-9.54S17.514 2 12 2zm2.636 10.354l-2.315-1.737-3.03 1.737 2.315-3.747 3.03-1.737-2.315 3.747 2.315 1.737z" />
+        </svg>
+      </a>
+
       {/* Nội dung trang */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Carousel */}
         <div className="relative mb-10">
-          <div
-            className="overflow-hidden rounded-lg"
-            ref={carouselRef}
-          >
+          <div className="overflow-hidden rounded-lg" ref={carouselRef}>
             <div className="flex transition-transform ease-out duration-500">
               <div className="flex-shrink-0 w-full">
                 <img
@@ -124,66 +144,7 @@ const HomePage = () => {
       {/* Footer */}
       <footer className="bg-gray-800 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Thông tin chung */}
-          <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start mb-8">
-            <div className="text-center sm:text-left">
-              <h1 className="text-2xl font-bold text-emerald-400 mb-2">Khoa</h1>
-              <p className="text-sm">Tổng đài CSKH: 02873066060</p>
-              <p className="text-sm">Email: cskh@icondenim.com</p>
-            </div>
-
-            {/* Đăng ký nhận tin */}
-            <div className="mt-6 sm:mt-0">
-              <h3 className="text-xl font-semibold text-emerald-400 mb-2">
-                ĐĂNG KÝ NHẬN TIN
-              </h3>
-              <p className="text-sm mb-4">Hãy là người đầu tiên nhận khuyến mãi lớn!</p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Nhập địa chỉ email"
-                  className="px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-emerald-400"
-                />
-                <button className="bg-emerald-600 text-white px-6 py-2 rounded-r-md">
-                  ĐĂNG KÝ
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Hỗ trợ khách hàng */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h3 className="text-xl font-semibold text-emerald-400 mb-4">
-                HỖ TRỢ KHÁCH HÀNG
-              </h3>
-              <ul>
-                <li>
-                  <a href="#" className="hover:text-emerald-400">
-                    Chính sách đổi hàng và bảo hành
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-emerald-400">
-                    Chính sách Membership
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold text-emerald-400 mb-4">
-                HỆ THỐNG CỬA HÀNG
-              </h3>
-              <ul>
-                <li>12-12Bis, CMT8, P.Bến Thành, Q.1, HCM</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="text-center text-sm text-gray-400">
-            &copy; 2024 Bản quyền thuộc về Khoa
-          </div>
+          {/* Footer content here */}
         </div>
       </footer>
     </div>
