@@ -48,7 +48,7 @@ const Navbar = () => {
         if (carouselRef.current.scrollLeft >= maxScrollLeft) {
           carouselRef.current.scrollLeft = 0;
         } else {
-          carouselRef.current.scrollLeft += 10; // Increment scrolling
+          carouselRef.current.scrollLeft += 5; // Increment scrolling
         }
       }
     }, 50); // Adjust speed

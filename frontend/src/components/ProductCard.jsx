@@ -41,7 +41,7 @@ const ProductCard = ({ product }) => {
 				<h5 className='text-xl font-semibold tracking-tight text-white'>{product.name}</h5>
 				
 				{/* Mô tả sản phẩm */}
-				<p className='mt-2 text-sm text-gray-300'>{product.description}</p> {/* Thêm mô tả sản phẩm */}
+				{/* <p className='mt-2 text-sm text-gray-300'>{product.description}</p>  */}
 				
 				<div className='mt-2 mb-5 flex items-center justify-between'>
 					{/* Giá sản phẩm */}
