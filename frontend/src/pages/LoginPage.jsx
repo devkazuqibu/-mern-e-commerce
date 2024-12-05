@@ -3,12 +3,24 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { LogIn, Mail, Lock, ArrowRight, Loader } from "lucide-react";
 import { useUserStore } from "../stores/useUserStore"; // Hook quản lý người dùng
+import { useEffect } from "react";
 
 const LoginPage = () => {
 	const [email, setEmail] = useState(""); // Quản lý email
 	const [password, setPassword] = useState(""); // Quản lý mật khẩu
 
 	const { login, loading } = useUserStore(); // Lấy hàm đăng nhập và trạng thái loading
+
+	useEffect(() => {
+		const script = document.createElement("script");
+		script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?compat=recaptcha";
+		script.async = true;
+		script.defer = true;
+		document.body.appendChild(script);
+		return () => {
+			document.body.removeChild(script);
+		};
+	}, []);
 
 	// Xử lý khi người dùng gửi form
 	const handleSubmit = (e) => {
@@ -82,6 +94,9 @@ const LoginPage = () => {
 								/>
 							</div>
 						</div>
+
+						{/* Cloudflare Turnstile CAPTCHA */}
+						<div className='cf-turnstile' data-sitekey='0x4AAAAAAA1h2CT9lL1cuwBy'></div>
 
 						{/* Nút đăng nhập */}
 						<button
