@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { UserPlus, Mail, Lock, User, ArrowRight, Loader } from "lucide-react";
 import { motion } from "framer-motion";
 import { useUserStore } from "../stores/useUserStore";
-
+import { useEffect } from "react";
 // Thành phần đăng ký người dùng
 const SignUpPage = () => {
 	const [formData, setFormData] = useState({
@@ -16,6 +16,22 @@ const SignUpPage = () => {
 	 // Thêm trường address
 	});
 	const { signup, loading } = useUserStore();
+	useEffect(() => {
+/*************  ✨ Codeium Command ⭐  *************/
+	/**
+	 * X  lý khi ng i d ng g i form
+	 * 
+	 * @param {Event} e - S ki n t i form
+	 */
+/******  04117647-0ee5-4024-bba2-369e37bcd2fe  *******/		const script = document.createElement("script");
+		script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?compat=recaptcha";
+		script.async = true;
+		script.defer = true;
+		document.body.appendChild(script);
+		return () => {
+			document.body.removeChild(script);
+		};
+	}, []);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -173,6 +189,7 @@ const SignUpPage = () => {
 								/>
 							</div>
 						</div>
+						<div className='cf-turnstile' data-sitekey='0x4AAAAAAA1h2CT9lL1cuwBy'></div>
 
 						{/* Nút đăng ký */}
 						<button
